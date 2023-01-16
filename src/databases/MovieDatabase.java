@@ -83,6 +83,37 @@ public final class MovieDatabase {
    }
 
    /**
+    *
+    * @return true if the movie was added, false if the movie already existed
+    */
+   public boolean addMovieToDatabase(Movie wantedMovie){
+      boolean found = false;
+      for(Movie movie: moviesTotal){
+         if(movie.getName().equals(wantedMovie.getName())){
+            found = true;
+            break;
+         }
+      }
+      if(found == false)
+         moviesTotal.add(wantedMovie);
+      return !found;
+   }
+
+   /**
+    * @return the movie deleted, or null if there isn't any
+    */
+   public Movie removeMovieFromDatabase(String name){
+      // keeping this here because I found it cool, but I need to know if the movie exists
+      // moviesTotal.removeIf(movie -> movie.getName().equals(name));
+      for(Movie movie: moviesTotal){
+         if(movie.getName().equals(name)){
+            moviesTotal.remove(movie);
+            return movie;
+         }
+      }
+      return null;
+   }
+   /**
     * all hail the mighty code style checker (do I really need to explain what this does?)
     */
    public ArrayList<Movie> getCurrentMovies() {

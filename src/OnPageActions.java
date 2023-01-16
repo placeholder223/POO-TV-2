@@ -187,6 +187,18 @@ public final class OnPageActions {
             needsChange = Errors.errorOutput(null, Errors.toList(wantedMovie), currentUser,
                   temp);
          }
+         case Pages.SUBSCRIBE -> {
+            if(!movieDatabase.get(detailedMovie).getGenres().contains(
+                  action.getSubscribedGenre())){
+               needsChange = Errors.errorOutput(Errors.ERROR, null, null, temp);
+               break;
+            }
+            if(currentUser.getSubscriptions().contains(action.getSubscribedGenre())){
+               needsChange = Errors.errorOutput(Errors.ERROR, null, null, temp);
+               break;
+            }
+            currentUser.addSubscription(action.getSubscribedGenre());
+         }
          default -> {
          }
       }

@@ -50,9 +50,9 @@ public final class ChangePage {
                   currentUser, temp);
          }
          case Pages.SEE_DETAILS -> {
-            backStack.push(currentPage);
             for (Movie movie : movieDatabase.getCurrentMovies()) {
                if (movie.getName().equals(action.getMovie())) {
+                  backStack.push(currentPage);
                   actualPage = tempPage;
                   OnPageActions.setDetailedMovie(action.getMovie());
                   needsChange = Errors.errorOutput(null, Errors.toList(movie), currentUser, temp);

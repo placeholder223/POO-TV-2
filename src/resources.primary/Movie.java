@@ -10,7 +10,7 @@ import java.util.Hashtable;
 public class Movie {
    public static final int NUM_TOKENS_FOR_BUYING = 2;
    private String name;
-   private Integer year;
+   private String year;
    private Integer duration;
    private ArrayList<String> genres;
    private ArrayList<String> actors;
@@ -82,14 +82,14 @@ public class Movie {
    /**
     * all hail the mighty code style checker (do I really need to explain what this does?)
     */
-   public Integer getYear() {
+   public String getYear() {
       return year;
    }
 
    /**
     * all hail the mighty code style checker (do I really need to explain what this does?)
     */
-   public void setYear(final Integer year) {
+   public void setYear(final String year) {
       this.year = year;
    }
 

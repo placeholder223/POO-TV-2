@@ -4,6 +4,7 @@ package error.handling;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import resources.primary.Movie;
 import resources.primary.User;
+import resources.primary.Action;
 
 import java.util.ArrayList;
 
@@ -20,6 +21,7 @@ public final class Errors {
 
    /**
     * makes a list from only one movie, for the output to handle
+    *
     * @return a list with that movie
     */
    public static ArrayList<Movie> toList(final Movie movie) {
@@ -32,6 +34,7 @@ public final class Errors {
     * puts the error in the objectNode to be added later in the output, if an empty list
     * is wanted, null is given as parameter.
     * If only a movie needs to be shown, the toList function is used
+    *
     * @return true so the needsChange can be set to true in order to notify the program
     * that the output needs to be changed
     */
@@ -49,10 +52,41 @@ public final class Errors {
          temp.putPOJO("currentMoviesList", new ArrayList<>());
       }
       if (user != null) {
+         //temp.putPOJO("currentUser", new User(user));
          temp.putPOJO("currentUser", new User(user));
       } else {
          temp.put("currentUser", (String) null);
       }
+      return true;
+   }
+
+   public static boolean errorOutput(final String error, final ArrayList<Movie> movies,
+                                     final User user, final ObjectNode temp, final Action action) {
+      temp.put("error", error);
+      temp.put("type", action.getType());
+      temp.put("feature", action.getFeature());
+      if (movies != null) {
+         ArrayList<Movie> copyMovies = new ArrayList<>();
+         for (Movie movie : movies) {
+            copyMovies.add(new Movie(movie));
+         }
+         temp.putPOJO("currentMoviesList", new ArrayList<>(copyMovies));
+      } else {
+         // if the argument is null then we want an empty list
+         temp.putPOJO("currentMoviesList", new ArrayList<>());
+      }
+      if (user != null) {
+         temp.putPOJO("currentUser", new User(user));
+      } else {
+         temp.put("currentUser", (String) null);
+      }
+      return true;
+   }
+
+   public static boolean errorOutput(final User user, final ObjectNode temp) {
+      temp.put("error", (String) null);
+      temp.put("currentMoviesList", (String) null);
+      temp.putPOJO("currentUser", new User(user));
       return true;
    }
 }

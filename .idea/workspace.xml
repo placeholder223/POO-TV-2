@@ -1,63 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca24f074-6a1d-429c-a836-a142a3cd5b68" name="Changes" comment="initial setup from project1">
-      <change afterPath="$PROJECT_DIR$/checker/resources/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/in/basic_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/in/basic_10.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/in/basic_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/in/basic_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/in/basic_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/in/basic_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/in/basic_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/in/basic_7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/in/basic_8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/in/basic_9.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/ref/basic_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/ref/basic_10.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/ref/basic_2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/ref/basic_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/ref/basic_4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/ref/basic_5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/ref/basic_6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/ref/basic_7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/ref/basic_8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checker/resources/ref/basic_9.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jackson-annotations-2.13.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jackson-core-2.13.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jackson-databind-2.13.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result/out_basic_1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result/out_basic_3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/result/out_basic_8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ChangePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CheckerFiles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OnPageActions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/WhereIs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checker/Checker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checker/CheckerConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checker/Checkstyle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checker/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checker/checkstyle-8.36.2-all.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checker/checkstyle.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/checker/poo_checks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/databases/MovieDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/databases/UserDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/error.handling/Errors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/filters/Contains.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/filters/Filters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/filters/Sort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/notifs.and.recommended/Notific.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources.primary/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources.primary/Credentials.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources.primary/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources.primary/Pages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources.primary/SubPages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources.primary/User.java" afterDir="false" />
+    <list default="true" id="ca24f074-6a1d-429c-a836-a142a3cd5b68" name="Changes" comment="Back function is working, also put the notifications field for the users">
+      <change afterPath="$PROJECT_DIR$/in - Shortcut.lnk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ref - Shortcut.lnk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/out_basic_10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/out_basic_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/out_basic_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/out_basic_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/out_basic_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/out_basic_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/result/out_basic_9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/notifs.and.recommended/Recommendations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/out_basic_8.json" beforeDir="false" afterPath="$PROJECT_DIR$/result/out_basic_8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ChangePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ChangePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OnPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OnPageActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WhereIs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WhereIs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/databases/MovieDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/MovieDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/error.handling/Errors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/error.handling/Errors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources.primary/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources.primary/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources.primary/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources.primary/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources.primary/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources.primary/Pages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources.primary/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources.primary/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673832741011</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Back function is working, also put the notifications field for the users">
+      <created>1673835620600</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673835620600</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +103,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial setup from project1" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial setup from project1" />
+    <MESSAGE value="Back function is working, also put the notifications field for the users" />
+    <option name="LAST_COMMIT_MESSAGE" value="Back function is working, also put the notifications field for the users" />
   </component>
 </project>

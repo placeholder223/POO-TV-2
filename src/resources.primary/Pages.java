@@ -18,6 +18,7 @@ public class Pages {
    public static final String MOVIES = "movies";
    public static final String SEE_DETAILS = "see details";
    public static final String LOGOUT = "logout";
+   public static final String SUBSCRIBE = "subscribe";
    private ArrayList<SubPages> changePage;
 
    /**
@@ -78,6 +79,7 @@ public class Pages {
       seeDetails.getOnPage().add(WATCH);
       seeDetails.getOnPage().add(LIKE);
       seeDetails.getOnPage().add(RATE);
+      seeDetails.getOnPage().add(SUBSCRIBE);
       upgrades.getChangePage().add(movies);
    }
 

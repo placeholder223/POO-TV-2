@@ -1,4 +1,5 @@
 package resources.primary;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import notifs.and.recommended.Notific;
 
 import java.util.ArrayList;
@@ -16,6 +17,8 @@ public class User {
    private ArrayList<Movie> likedMovies;
    private ArrayList<Movie> ratedMovies;
    private ArrayList<Notific> notifications;
+   @JsonIgnore
+   private ArrayList<String> subscriptions;
 
    public User() {
       this.credentials = new Credentials();
@@ -24,6 +27,7 @@ public class User {
       this.likedMovies = new ArrayList<>();
       this.ratedMovies = new ArrayList<>();
       this.notifications = new ArrayList<>();
+      this.subscriptions = new ArrayList<>();
    }
 
    public User(final User other) {
@@ -63,6 +67,7 @@ public class User {
             this.notifications.add(new Notific(notific));
          }
       }
+      this.subscriptions = other.getSubscriptions();
    }
 
    /**
@@ -80,6 +85,8 @@ public class User {
       this.watchedMovies = new ArrayList<>();
       this.likedMovies = new ArrayList<>();
       this.ratedMovies = new ArrayList<>();
+      this.subscriptions = new ArrayList<>();
+      this.notifications = new ArrayList<>();
    }
 
    /**
@@ -233,5 +240,20 @@ public class User {
 
    public void setNotifications(ArrayList<Notific> notifications) {
       this.notifications = notifications;
+   }
+   public void addNotification(String movieName, String message){
+      Notific notific = new Notific(movieName,message);
+      this.notifications.add(notific);
+   }
+   @JsonIgnore
+   public ArrayList<String> getSubscriptions() {
+      return subscriptions;
+   }
+   @JsonIgnore
+   public void setSubscriptions(ArrayList<String> subscriptions) {
+      this.subscriptions = subscriptions;
+   }
+   public void addSubscription(String subscription){
+      this.subscriptions.add(subscription);
    }
 }

@@ -10,9 +10,30 @@ public class Action {
     * there coual also be a constant for "change page", but since it can either be on page or
     * change page, there is no need
     */
+   /**
+    * type of action
+    */
    public static final String ON_PAGE = "on page";
+   /**
+    * type of action
+    */
    public static final String CHANGE_PAGE = "change page";
+   /**
+    * type of action
+    */
    public static final String BACK = "back";
+   /**
+    * type of action
+    */
+   public static final String DATABASE = "database";
+   /**
+    * feature of action
+    */
+   public static final String DATABASE_ADD = "add";
+   /**
+    * feature of action
+    */
+   public static final String DATABASE_DELETE = "delete";
    /**
     * default constructor
     */
@@ -29,6 +50,9 @@ public class Action {
    private String count;
    private String page;
    private Integer rate;
+   private String subscribedGenre;
+   private Movie addedMovie;
+   private String deletedMovie;
 
    /**
     * all hail the mighty code style checker (do I really need to explain what this does?)
@@ -137,5 +161,29 @@ public class Action {
     */
    public void setPage(final String page) {
       this.page = page;
+   }
+
+   public String getSubscribedGenre() {
+      return subscribedGenre;
+   }
+
+   public void setSubscribedGenre(String subscribedGenre) {
+      this.subscribedGenre = subscribedGenre;
+   }
+
+   public Movie getAddedMovie() {
+      return addedMovie;
+   }
+
+   public void setAddedMovie(Movie addedMovie) {
+      this.addedMovie = addedMovie;
+   }
+
+   public String getDeletedMovie() {
+      return deletedMovie;
+   }
+
+   public void setDeletedMovie(String deletedMovie) {
+      this.deletedMovie = deletedMovie;
    }
 }
