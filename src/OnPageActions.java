@@ -120,6 +120,11 @@ public final class OnPageActions {
                needsChange = Errors.errorOutput(Errors.ERROR, null, currentUser, temp);
                break;
             }
+            if (currentUser.getPurchasedMovies().contains(wantedMovie)) {
+               //if the user already purchased the movie
+               needsChange = Errors.errorOutput(Errors.ERROR, null, null, temp);
+               break;
+            }
             if (!currentUser.getCredentials().getAccountType().equals(User.PREMIUM_STATUS)) {
                // very dumb thing, all users start with 15 free movies, but for the standard
                // account they don't count. Why is this?
@@ -157,7 +162,9 @@ public final class OnPageActions {
                needsChange = Errors.errorOutput(Errors.ERROR, null, null, temp);
                break;
             }
-            currentUser.getWatchedMovies().add(wantedMovie);
+            if (!currentUser.getWatchedMovies().contains(wantedMovie)) {
+               currentUser.getWatchedMovies().add(wantedMovie);
+            }
             needsChange = Errors.errorOutput(null, Errors.toList(wantedMovie), currentUser,
                   temp);
          }
@@ -167,7 +174,9 @@ public final class OnPageActions {
                needsChange = Errors.errorOutput(Errors.ERROR, null, null, temp);
                break;
             }
-            currentUser.addToLikedMovies(wantedMovie);
+            if (!currentUser.getLikedMovies().contains(wantedMovie)) {
+               currentUser.addToLikedMovies(wantedMovie);
+            }
             needsChange = Errors.errorOutput(null, Errors.toList(wantedMovie), currentUser,
                   temp);
          }
@@ -183,17 +192,21 @@ public final class OnPageActions {
                needsChange = Errors.errorOutput(Errors.ERROR, null, null, temp);
                break;
             }
-            currentUser.addToRatedMovies(wantedMovie, action.getRate());
+            if (!currentUser.getRatedMovies().contains(wantedMovie)) {
+               currentUser.addToRatedMovies(wantedMovie, action.getRate());
+            } else {
+               wantedMovie.changeRating(currentUser, action.getRate());
+            }
             needsChange = Errors.errorOutput(null, Errors.toList(wantedMovie), currentUser,
                   temp);
          }
          case Pages.SUBSCRIBE -> {
-            if(!movieDatabase.get(detailedMovie).getGenres().contains(
-                  action.getSubscribedGenre())){
+            if (!movieDatabase.get(detailedMovie).getGenres().contains(
+                  action.getSubscribedGenre())) {
                needsChange = Errors.errorOutput(Errors.ERROR, null, null, temp);
                break;
             }
-            if(currentUser.getSubscriptions().contains(action.getSubscribedGenre())){
+            if (currentUser.getSubscriptions().contains(action.getSubscribedGenre())) {
                needsChange = Errors.errorOutput(Errors.ERROR, null, null, temp);
                break;
             }

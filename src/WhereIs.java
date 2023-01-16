@@ -47,8 +47,6 @@ public final class WhereIs {
       for (Action action : inputData.getActions()) { // we take each action and handle it
          boolean needsChange; // whether or not the output needs to be updated
          ObjectNode temp = objMapper.createObjectNode();
-         //System.out.println(action.getType() + " + " + action.getFeature());
-         //System.out.flush();
          switch (action.getType()) {
             case Action.ON_PAGE -> {
                if (!currPage.getOnPage().contains(action.getFeature())) {
@@ -87,13 +85,17 @@ public final class WhereIs {
                   tempPage = null;
                }
                if (tempPage == null) {
-                  // if there's no subPage with the given name on the current page
+                  // if there's no page to go back to
                   needsChange = Errors.errorOutput(Errors.ERROR, null, null, temp);
                } else {
-                  //ChangePage.changePageActions(temp, action, currUser, currPage,
-                  //      pages, movieDatabase, tempPage, backStack);
-                  //needsChange = ChangePage.getNeedsChange();
-                  needsChange = false;
+                  if (tempPage.getName().equals(Pages.MOVIES)) {
+                     // if we go back to the movies page, we must show again all movies available
+                     movieDatabase.getAvailableMovies(currUser);
+                     needsChange = Errors.errorOutput(null, movieDatabase.getCurrentMovies(),
+                           currUser, temp);
+                  } else {
+                     needsChange = false;
+                  }
                   currPage = tempPage;
                }
             }
@@ -103,7 +105,7 @@ public final class WhereIs {
                      needsChange = Errors.errorOutput(Errors.ERROR, null, null, temp);
                   } else {
                      for (User user : userDatabase.getUsers()) {
-                        for (String genre : action.getAddedMovie().getGenres())
+                        for (String genre : action.getAddedMovie().getGenres()){
                            if (user.getSubscriptions().contains(genre)
                                  && !action.getAddedMovie().getCountriesBanned().contains(
                                  user.getCredentials().getCountry())) {
@@ -111,8 +113,8 @@ public final class WhereIs {
                                     Action.DATABASE_ADD.toUpperCase());
                               break;
                            }
+                        }
                      }
-
                      needsChange = false;
                   }
                } else {
@@ -162,13 +164,13 @@ public final class WhereIs {
       if (currUser != null) {
          if (currUser.getCredentials().getAccountType().equals(User.PREMIUM_STATUS)) {
             ObjectNode temp = objMapper.createObjectNode();
-            String favoriteGenre = Recommendations.getFavoriteGenre(currUser,null);
-            if(favoriteGenre == null){
-            currUser.addNotification(Recommendations.NO_RECOMMENDATION_MOVIE,
-                  Recommendations.RECOMMENDATION_MESSAGE);
+            String favoriteGenre = Recommendations.getFavoriteGenre(currUser, null);
+            if (favoriteGenre == null) {
+               currUser.addNotification(Recommendations.NO_RECOMMENDATION_MOVIE,
+                     Recommendations.RECOMMENDATION_MESSAGE);
             } else {
                currUser.addNotification(Recommendations.getRecommendedMovie(currUser,
-                           movieDatabase).getName(), Recommendations.RECOMMENDATION_MESSAGE);
+                     movieDatabase).getName(), Recommendations.RECOMMENDATION_MESSAGE);
             }
             Errors.errorOutput(currUser, temp);
             output.add(temp);

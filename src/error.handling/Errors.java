@@ -4,7 +4,6 @@ package error.handling;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import resources.primary.Movie;
 import resources.primary.User;
-import resources.primary.Action;
 
 import java.util.ArrayList;
 
@@ -60,29 +59,11 @@ public final class Errors {
       return true;
    }
 
-   public static boolean errorOutput(final String error, final ArrayList<Movie> movies,
-                                     final User user, final ObjectNode temp, final Action action) {
-      temp.put("error", error);
-      temp.put("type", action.getType());
-      temp.put("feature", action.getFeature());
-      if (movies != null) {
-         ArrayList<Movie> copyMovies = new ArrayList<>();
-         for (Movie movie : movies) {
-            copyMovies.add(new Movie(movie));
-         }
-         temp.putPOJO("currentMoviesList", new ArrayList<>(copyMovies));
-      } else {
-         // if the argument is null then we want an empty list
-         temp.putPOJO("currentMoviesList", new ArrayList<>());
-      }
-      if (user != null) {
-         temp.putPOJO("currentUser", new User(user));
-      } else {
-         temp.put("currentUser", (String) null);
-      }
-      return true;
-   }
-
+   /**
+    * used for recommendations, notice how there is only null in error and movies field,
+    * so no parameters for that are needed
+    * @return true because it needsChange will change
+    */
    public static boolean errorOutput(final User user, final ObjectNode temp) {
       temp.put("error", (String) null);
       temp.put("currentMoviesList", (String) null);

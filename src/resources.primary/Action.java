@@ -162,28 +162,40 @@ public class Action {
    public void setPage(final String page) {
       this.page = page;
    }
-
+   /**
+    * all hail the mighty code style checker (do I really need to explain what this does?)
+    */
    public String getSubscribedGenre() {
       return subscribedGenre;
    }
-
-   public void setSubscribedGenre(String subscribedGenre) {
+   /**
+    * all hail the mighty code style checker (do I really need to explain what this does?)
+    */
+   public void setSubscribedGenre(final String subscribedGenre) {
       this.subscribedGenre = subscribedGenre;
    }
-
+   /**
+    * all hail the mighty code style checker (do I really need to explain what this does?)
+    */
    public Movie getAddedMovie() {
       return addedMovie;
    }
-
-   public void setAddedMovie(Movie addedMovie) {
+   /**
+    * all hail the mighty code style checker (do I really need to explain what this does?)
+    */
+   public void setAddedMovie(final Movie addedMovie) {
       this.addedMovie = addedMovie;
    }
-
+   /**
+    * all hail the mighty code style checker (do I really need to explain what this does?)
+    */
    public String getDeletedMovie() {
       return deletedMovie;
    }
-
-   public void setDeletedMovie(String deletedMovie) {
+   /**
+    * all hail the mighty code style checker (do I really need to explain what this does?)
+    */
+   public void setDeletedMovie(final String deletedMovie) {
       this.deletedMovie = deletedMovie;
    }
 }

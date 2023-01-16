@@ -40,6 +40,16 @@ public class Movie {
    }
 
    /**
+    * changes the rating from the database, used for when user re-rates a movie
+    */
+   public void changeRating(final User user, final Integer givenRating) {
+      this.ratings.put(user, givenRating);
+      this.rating
+            = ((double) ratings.values().stream().mapToInt(Integer::intValue).sum())
+            / (double) this.numRatings;
+   }
+
+   /**
     * default constructor
     */
    public Movie() {

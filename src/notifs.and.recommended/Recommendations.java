@@ -5,25 +5,30 @@ import resources.primary.Movie;
 import resources.primary.User;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
 
 public final class Recommendations {
    public static final String NO_RECOMMENDATION_MOVIE = "No recommendation";
    public static final String RECOMMENDATION_MESSAGE = "Recommendation";
 
-   public static String getFavoriteGenre(User user, ArrayList<String> avoidedGenres) {
+   private Recommendations() {
+
+   }
+
+   /**
+    *
+    * @param avoidedGenres genres that were already made, it is only used by the method
+    *                      that gets the recommended movie, use null otherwise
+    * @return the genre that is favorite
+    */
+   public static String getFavoriteGenre(final User user, final ArrayList<String> avoidedGenres) {
       if (user.getLikedMovies().size() == 0) {
          return null;
       }
       HashMap<String, Integer> genresFrequency = new HashMap<>();
       for (Movie movie : user.getLikedMovies()) {
          for (String genre : movie.getGenres()) {
-            if(avoidedGenres != null){
+            if (avoidedGenres != null) {
                if (!avoidedGenres.contains(genre)) {
                   if (genresFrequency.containsKey(genre)) {
                      genresFrequency.put(genre, genresFrequency.get(genre) + 1);
@@ -56,7 +61,12 @@ public final class Recommendations {
       return mostFrequentGenre;
    }
 
-   public static Movie getRecommendedMovie(User user, MovieDatabase movieDatabase) {
+   /**
+    * gets the recommended movie based on genre and likes
+    *
+    * @return the movie, or null if there is no available one
+    */
+   public static Movie getRecommendedMovie(final User user, final MovieDatabase movieDatabase) {
       movieDatabase.getAvailableMovies(user);
       ArrayList<Movie> copyList = new ArrayList<>(movieDatabase.getCurrentMovies());
       String favoriteGenre = getFavoriteGenre(user, null);
@@ -68,7 +78,7 @@ public final class Recommendations {
          }
       }
       ArrayList<String> searchedGenres = new ArrayList<>();
-      while(genredList.size()==0){
+      while (genredList.size() == 0) {
          searchedGenres.add(favoriteGenre);
          movieDatabase.getAvailableMovies(user);
          copyList = new ArrayList<>(movieDatabase.getCurrentMovies());
@@ -83,8 +93,8 @@ public final class Recommendations {
       }
       int maxLikes = 0;
       Movie recommendedMovie = null;
-      for(Movie movie : genredList){
-         if(movie.getNumLikes() > maxLikes){
+      for (Movie movie : genredList) {
+         if (movie.getNumLikes() > maxLikes) {
             maxLikes = movie.getNumLikes();
             recommendedMovie = movie;
          } else if (recommendedMovie == null) {

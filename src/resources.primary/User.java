@@ -1,4 +1,5 @@
 package resources.primary;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import notifs.and.recommended.Notific;
 
@@ -234,26 +235,48 @@ public class User {
       movie.addRating(this, rating);
    }
 
+   /**
+    * all hail the mighty code style checker (do I really need to explain what this does?)
+    */
    public ArrayList<Notific> getNotifications() {
       return notifications;
    }
 
-   public void setNotifications(ArrayList<Notific> notifications) {
+   /**
+    * all hail the mighty code style checker (do I really need to explain what this does?)
+    */
+   public void setNotifications(final ArrayList<Notific> notifications) {
       this.notifications = notifications;
    }
-   public void addNotification(String movieName, String message){
-      Notific notific = new Notific(movieName,message);
+
+   /**
+    * adds notification to the list of notifications, based on movieName and message
+    */
+   public void addNotification(final String movieName, final String message) {
+      Notific notific = new Notific(movieName, message);
       this.notifications.add(notific);
    }
+
+   /**
+    * all hail the mighty code style checker (do I really need to explain what this does?)
+    */
    @JsonIgnore
    public ArrayList<String> getSubscriptions() {
       return subscriptions;
    }
+
+   /**
+    * all hail the mighty code style checker (do I really need to explain what this does?)
+    */
    @JsonIgnore
-   public void setSubscriptions(ArrayList<String> subscriptions) {
+   public void setSubscriptions(final ArrayList<String> subscriptions) {
       this.subscriptions = subscriptions;
    }
-   public void addSubscription(String subscription){
+
+   /**
+    * adds a subscription to the list
+    */
+   public void addSubscription(final String subscription) {
       this.subscriptions.add(subscription);
    }
 }

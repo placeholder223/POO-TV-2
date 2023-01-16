@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca24f074-6a1d-429c-a836-a142a3cd5b68" name="Changes" comment="Made recommendations, though not sure if it works when it has to search for multiple genres.">
+    <list default="true" id="ca24f074-6a1d-429c-a836-a142a3cd5b68" name="Changes" comment="Before I change Back">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/out_basic_4.json" beforeDir="false" afterPath="$PROJECT_DIR$/result/out_basic_4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/out_basic_8.json" beforeDir="false" afterPath="$PROJECT_DIR$/result/out_basic_8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result/out_basic_9.json" beforeDir="false" afterPath="$PROJECT_DIR$/result/out_basic_9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OnPageActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OnPageActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WhereIs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WhereIs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/databases/MovieDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/databases/MovieDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/error.handling/Errors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/error.handling/Errors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notifs.and.recommended/Notific.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/notifs.and.recommended/Notific.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/notifs.and.recommended/Recommendations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/notifs.and.recommended/Recommendations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources.primary/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources.primary/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources.primary/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources.primary/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources.primary/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources.primary/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,17 +45,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Documents/POO (Java)/oop-asignments/proiect2/proiect2/lib",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/POO (Java)/oop-asignments/proiect2/proiect2/lib&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673846007762</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Before I change Back">
+      <created>1673871410377</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673871410377</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,6 +112,7 @@
     <MESSAGE value="initial setup from project1" />
     <MESSAGE value="Back function is working, also put the notifications field for the users" />
     <MESSAGE value="Made recommendations, though not sure if it works when it has to search for multiple genres." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made recommendations, though not sure if it works when it has to search for multiple genres." />
+    <MESSAGE value="Before I change Back" />
+    <option name="LAST_COMMIT_MESSAGE" value="Before I change Back" />
   </component>
 </project>
