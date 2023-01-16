@@ -5,7 +5,5 @@ Starting audit...
 [ERROR] D:\Documents\POO (Java)\oop-asignments\proiect2\proiect2\.\src\Test.java:163: Line is longer than 100 characters (found 107). [LineLength]
 [ERROR] D:\Documents\POO (Java)\oop-asignments\proiect2\proiect2\.\src\Test.java:211:64: Parameter testFileName should be final. [FinalParameters]
 [ERROR] D:\Documents\POO (Java)\oop-asignments\proiect2\proiect2\.\src\Test.java:227: Line is longer than 100 characters (found 107). [LineLength]
-[ERROR] D:\Documents\POO (Java)\oop-asignments\proiect2\proiect2\.\src\WhereIs.java:32:4: Method length is 151 lines (max allowed is 150). [MethodLength]
-[ERROR] D:\Documents\POO (Java)\oop-asignments\proiect2\proiect2\.\src\WhereIs.java:112:25: 'for' construct must use '{}'s. [NeedBraces]
 Audit done.
-Checkstyle ends with 8 errors.
+Checkstyle ends with 6 errors.

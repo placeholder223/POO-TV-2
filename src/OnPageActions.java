@@ -163,6 +163,7 @@ public final class OnPageActions {
                break;
             }
             if (!currentUser.getWatchedMovies().contains(wantedMovie)) {
+               // don't add duplicate movies to the watched list if the user watches it again
                currentUser.getWatchedMovies().add(wantedMovie);
             }
             needsChange = Errors.errorOutput(null, Errors.toList(wantedMovie), currentUser,
@@ -175,6 +176,7 @@ public final class OnPageActions {
                break;
             }
             if (!currentUser.getLikedMovies().contains(wantedMovie)) {
+               // don't add duplicate movies to the liked list if the user likes it again
                currentUser.addToLikedMovies(wantedMovie);
             }
             needsChange = Errors.errorOutput(null, Errors.toList(wantedMovie), currentUser,
@@ -193,8 +195,10 @@ public final class OnPageActions {
                break;
             }
             if (!currentUser.getRatedMovies().contains(wantedMovie)) {
+               // if the user hasn't rated the movies it will add a new rating
                currentUser.addToRatedMovies(wantedMovie, action.getRate());
             } else {
+               // otherwise it will just change it
                wantedMovie.changeRating(currentUser, action.getRate());
             }
             needsChange = Errors.errorOutput(null, Errors.toList(wantedMovie), currentUser,
